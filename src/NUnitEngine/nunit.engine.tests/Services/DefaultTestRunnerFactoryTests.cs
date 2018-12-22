@@ -62,7 +62,7 @@ namespace NUnit.Engine.Services.Tests
         [TestCase("x.dll y.dll",       null,        typeof(AggregatingTestRunner))]
         // Three files
         [TestCase("x.dll y.dll z.dll",   null,       typeof(AggregatingTestRunner))]
-#elif NETCOREAPP2_0
+#elif NETCOREAPP2_1
         // Single file
         [TestCase("x.nunit",           null,        typeof(AggregatingTestRunner))]
         [TestCase("x.dll",             null,        typeof(LocalTestRunner))]
@@ -121,7 +121,7 @@ namespace NUnit.Engine.Services.Tests
             Assert.That(runner, Is.TypeOf(expectedType));
         }
 
-#if NETCOREAPP1_1 || NETCOREAPP2_0
+#if NETCOREAPP1_1 || NETCOREAPP2_1
         [TestCase("x.junk", typeof(LocalTestRunner))]
         [TestCase("x.junk y.dll", typeof(AggregatingTestRunner))]
         [TestCase("x.junk y.junk", typeof(AggregatingTestRunner))]
